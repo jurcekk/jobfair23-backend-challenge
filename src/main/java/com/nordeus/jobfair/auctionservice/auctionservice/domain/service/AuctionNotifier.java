@@ -5,7 +5,7 @@ import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.Bid;
 
 import java.util.Collection;
 
-public interface AuctionNotifer {
+public interface AuctionNotifier {
 
     void auctionFinished(Auction auction);
 

@@ -9,16 +9,16 @@ import java.util.Collection;
 
 @Slf4j
 @Service
-public class AuctionNotifierLogger implements AuctionNotifer {
+public class AuctionNotifierLogger implements AuctionNotifier {
 
     @Override
     public void auctionFinished(Auction auction) {
-        log.info("Auction finished: {}", auction);
+        log.info("Auction {} finished. {} ", auction.getAuctionId().getId(), auction.getHighestBidUserId() == null ? "Nobody has won the auction." : "User " + auction.getHighestBidUserId() + " has won the auction.");
     }
 
     @Override
     public void bidPlaced(Bid bid) {
-        log.info("Bid placed: {}", bid);
+        log.info("User {} placed a bid on auction {}.", bid.getUserID().getId(), bid.getAuctionId());
     }
 
     @Override

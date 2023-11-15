@@ -2,7 +2,7 @@ package com.nordeus.jobfair.auctionservice.auctionservice.domain;
 
 import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.Auction;
 import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.AuctionId;
-import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.User;
+import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.Response;
 import com.nordeus.jobfair.auctionservice.auctionservice.domain.model.UserId;
 
 import java.util.Collection;
@@ -11,9 +11,11 @@ public interface AuctionService {
 
     Collection<Auction> getAllActive();
 
-    Auction getAuction(AuctionId auctionId);
+    Auction getAuction(Integer auctionId);
 
-    void join(AuctionId auctionId, User user);
+    Response join(Integer auctionId, UserId userId);
 
-    void bid(AuctionId auctionId, UserId userId);
+    Response bid(Integer auctionId, UserId userId);
+
+    void createAuction();
 }
