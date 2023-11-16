@@ -18,7 +18,7 @@ public class Auction {
     public Auction() {
         this.auctionId = new AuctionId();
         this.price = 1;
-        this.endTime = Instant.now().plusSeconds(30);
+        this.endTime = Instant.now().plusSeconds(60);
         this.isActive = true;
     }
 

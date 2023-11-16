@@ -118,7 +118,7 @@ public class AuctionServiceImpl implements AuctionService {
         auctions.add(auction);
     }
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 60000)
     public void createAuctions() {
         for (int i = 0; i < 10; i++) createAuction();
         auctionNotifier.activeAuctionsRefreshed(auctions);
